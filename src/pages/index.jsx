@@ -16,14 +16,17 @@ import logoShopify from '@/images/logos/shopify.png'
 import logoSoundCloud from '@/images/logos/soundcloud.svg'
 import logo8fit from '@/images/logos/8fit.png'
 import redbooth from '@/images/logos/redbooth.png'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
+
+const images = [
+  "https://scontent-fra5-2.cdninstagram.com/v/t51.2885-15/343287043_637665074857519_7958770177121691970_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_cat=107&_nc_ohc=5ck86VvnYVQAX8h-Htp&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MzA4OTkzMTE2NDA2MDMxMzg2NA%3D%3D.2-ccb7-5&oh=00_AfCJ-dKgejq4ktAVpf-Zx4Y88l1Q1xTROyYduBBdaLbjcA&oe=6465CDF2&_nc_sid=6136e7",
+  "https://scontent-fra5-2.cdninstagram.com/v/t51.2885-15/342575098_696219605587497_4003869417727947115_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_cat=109&_nc_ohc=pvXd8tMAg5QAX-AyEUF&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MzA4NjgyMDUzMzIxNjAyMTg3NA%3D%3D.2-ccb7-5&oh=00_AfBdjEFwr0T1765mZPceENWwxWbQKvIcgNM0hEOYrwaHww&oe=646605E3&_nc_sid=6136e7",
+  "https://scontent.cdninstagram.com/v/t51.2885-15/343745374_608792057828249_3816952912310230621_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent.cdninstagram.com&_nc_cat=105&_nc_ohc=0J_Ip568cI4AX-i1fpK&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzA5MTg3NjA0MTUxODA0MTM2OA%3D%3D.2-ccb7-5&oh=00_AfDqITRVPo_pYl7cuddDL4jOc9IhaHEeFfYG_9z40eJI0A&oe=64663899&_nc_sid=978cb9",
+  "https://scontent-fra5-1.cdninstagram.com/v/t51.2885-15/308580170_133905776051796_2373406054182087051_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_cat=100&_nc_ohc=eEyd6xle9L4AX9-XL3O&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjkzNTc5MDIwMzYzNDk0Njk1NA%3D%3D.2-ccb7-5&oh=00_AfCxnOQImWTwbwbLwyEF6Oen5TtghObe4Gn07zSVMb2S0A&oe=64663844&_nc_sid=6136e7",
+  "https://scontent-fra3-1.cdninstagram.com/v/t51.2885-15/341781405_758387659219786_368301868950780910_n.jpg?stp=c180.0.1080.1080a_dst-jpg_e35_s480x480&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=110&_nc_ohc=ONjVf5A_UqEAX_RM3DR&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDHX1mILNuiEzABPfcuTRDP37eX_9i7NTiL9MZGPR-TmQ&oe=646631A6&_nc_sid=8fd12b"
+]
 
 function MailIcon(props) {
   return (
@@ -243,15 +246,15 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {images.map((image, imageIndex) => (
           <div
-            key={image.src}
+            key={image}
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
               rotations[imageIndex % rotations.length]
             )}
           >
-            <Image
+            <img
               src={image}
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
