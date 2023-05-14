@@ -12,10 +12,10 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoShopify from '@/images/logos/shopify.png'
+import logoSoundCloud from '@/images/logos/soundcloud.svg'
+import logo8fit from '@/images/logos/8fit.png'
+import redbooth from '@/images/logos/redbooth.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -139,35 +139,53 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      company: 'Shopify',
+      title: 'Senior Staff Engineer',
+      logo: logoShopify,
+      start: '2022',
+      end: '2023',
+    },,
+    {
+      company: 'Shopify',
+      title: 'Staff Engineer',
+      logo: logoShopify,
+      start: '2020',
+      end: '2022',
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Shopify',
+      title: 'Engineering Manager',
+      logo: logoShopify,
+      start: '2019',
+      end: '2020',
+    },
+    {
+      company: 'Shopify',
+      title: 'Production Engineer',
+      logo: logoShopify,
+      start: '2018',
       end: '2019',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
+      company: 'SoundCloud',
+      title: 'Core iOS Developer',
+      logo: logoSoundCloud,
+      start: '2015',
+      end: '2018',
+    },
+    {
+      company: '8fit',
+      title: 'iOS and Android developer',
+      logo: logo8fit,
+      start: '2015',
       end: '2014',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Redbooth',
+      title: 'iOS developer',
+      logo: redbooth,
+      start: '2014',
+      end: '2013',
     },
   ]
 
@@ -211,7 +229,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="/CV.pdf" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -251,7 +269,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Spencer Sharp - Software designer, founder, and amateur astronaut
+          Pedro Piñera - Software crafter, indie builder, and open sourcerer
         </title>
         <meta
           name="description"
@@ -261,32 +279,30 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Software crafter, indie builder, and open sourcerer
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I’m Pedro, a Senior Staff Developer based in Berlin 🇩🇪.
+            I enjoy building developer experiences that spark joy and make developers more productive.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com"
+              href="https://twitter.com/pepicrft"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://instagram.com"
+              href="https://instagram.com/pepicrft"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/pepicrft"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/pedro-piñera-buendia-9765a9125/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -302,7 +318,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>

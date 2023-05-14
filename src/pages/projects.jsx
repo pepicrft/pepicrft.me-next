@@ -4,46 +4,41 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoTuist from '@/images/logos/tuist.svg'
+import logoSoundCloud from '@/images/logos/soundcloud.svg'
+import logoCLI from '@/images/logos/cli.png'
+
+import logoShopify from '@/images/logos/shopify.png'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Shopify CLI',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'I devised and contributed to the overhaul of the CLI for Shopify, which is used by thousands of developers every day.',
+    link: { href: 'http://github.com/shopify/cl', label: 'github.com' },
+    logo: logoCLI,
   },
   {
-    name: 'Animaginary',
+    name: 'Shipit Mobile',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'I contributed to the design and implementation of an internal service to orchestrate the deployment of mobile apps',
+    link: { href: 'https://shopify.engineering/mobile-release-engineering-scale-shipit-mobile', label: 'shopify.engineering' },
+    logo: logoShopify,
   },
   {
-    name: 'HelioStream',
+    name: 'Tuist',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'A tool to help developers manage large Xcode projects by leveraging the dependency graph.',
+    link: { href: 'https://github.com/tuist', label: 'github.com' },
+    logo: logoTuist,
   },
+
   {
-    name: 'cosmOS',
+    name: 'SoundCloud',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'I contributed to the iOS app for a few years and built internal tools and processes for the team.',
+    link: { href: 'https://soundcloud.com/download', label: 'App Store' },
+    logo: logoSoundCloud,
   },
 ]
 
@@ -62,7 +57,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Pedro Piñera</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
