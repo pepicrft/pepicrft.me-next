@@ -57,7 +57,7 @@ export default function ArticlesIndex({ articles }) {
               programming languages as tools to solve problems and, therefore,
               can learn new ones more suitable for the problem at hand.
             </p>
-            <h3 class="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
               What I&apos;m looking for
             </h3>
 
@@ -71,7 +71,7 @@ export default function ArticlesIndex({ articles }) {
               or Blockchain.
             </p>
 
-            <h3 class="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
               What I can help you with
             </h3>
 
@@ -81,22 +81,22 @@ export default function ArticlesIndex({ articles }) {
               here a list of areas I could help your organization with:
             </p>
 
-            <ul class="list-inside list-disc">
+            <ul className="list-inside list-disc">
               <li>
-                <b>Developer productivity auditing and improvements:</b> I can
+                <b>Audit and improve the productivity of your developers:</b> I can
                 help you identify where the performance bottlenecks lay, develop
                 metrics and monitors, and implement improvements (e.g., slow and
                 inconsistent environment setup when jumping across repos).
               </li>
               <li>
-                <b>From product to platform:</b> If you’ve built a successful
+                <b>Create a developer platform for your product:</b> If you’ve built a successful
                 product and are considering building a developer platform for
                 third-party developers to extend your business domain, I can
                 help you plan and execute it. Developer platforms are an
                 excellent way to adapt your product to various cultures.
               </li>
               <li>
-                <b>Shopify App advise and development:</b> As the first
+                <b>Advise on and develop Shopify Apps:</b> As the first
                 developer of the{' '}
                 <a
                   href="https://shopify.engineering/overhauling-shopify-cli-for-a-better-developer-experience"
@@ -110,7 +110,7 @@ export default function ArticlesIndex({ articles }) {
                 help with the development, I’m open to that.
               </li>
               <li>
-                <b>Migrate your Xcode project to Tuist:</b> As the creator of
+                <b>Adopt Tuist in your Xcode projects:</b> As the creator of
                 Tuist, I have in-depth knowledge on the tool. I can help you
                 migrate the project, set up remote caching, and contribute new
                 features and improvements to the tool on behalf of your
@@ -125,16 +125,17 @@ export default function ArticlesIndex({ articles }) {
                 third-party services and tools with internal ones.
               </li>
               <li>
-                <b>Technical leadership:</b> I can help teams identify upcoming
+                <b>Lead technical projects:</b> I can help teams identify upcoming
                 problems and challenges and develop a plan to support the
                 business’ direction. I feel comfortable jumping into uncertain
                 problem spaces, solving them, and building a team around them.
                 I&apos;m also a person whose contagious passion creates bonds
                 and healthy team dynamics.
               </li>
+
             </ul>
 
-            <h3 class="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
               How to contact me
             </h3>
 
