@@ -1,0 +1,25 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  "author": "Pedro Piñera",
+  "date": "2016-06-22",
+  "title": "Network Testing - Say hello to Szimpla",
+  "description": "Introduction post for the last library that I've been working on, Szimpla."
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+
+**Where does Szimpla come from?** For those who are curious about the naming, I got the name from a famous [Ruinpub in Budapest](http://welovebudapest.com/clubs.and.nightlife.1/budapest.s.most.famous.ruin.pub.szimpla.kert) I liked the name the first time I heard about it and I decided to use the name for this testing library _(later on I discovered that there’s also a [Szimpla in Berlin](http://www.szimpla.de/))_. Translated from the Hungarian it means _“Single”_ which doesn’t match with what the library is actually doing…😖
+
+**What’s Szimpla?** It’s a Swift framework that helps developers testing Networking on their applications.
+
+**But.. what’s the purpose?** Although we might provide unit and acceptance tests with our apps, for example, how request factories build the requests _(unit tests)_, how the application can navigate from one view to the other _(acceptance tests)_, there’s some stuff that is hard to test with the existing testing approaches & frameworks. That explains why companies like Facebook came up with a [_library_](https://github.com/facebook/ios-snapshot-test-case) for testing layouts using snapshots, and developers keep building tools, ensuring we don’t leave any area without testing. Szimpla does something similar to what the Facebook library does but instead of snapshotting views, it records requests. _The library allows you record all the requests that have been sent during some code execution or while navigating through the app and use the recorded data as expectations for future executions._
+
+**Where is it useful for?** It’s useful for all the networking stuff whose result has no direct result over the UI, for example Analytics. _How many times have you forgotten sending an event, or you just sent it with the wrong parameters and them the analytics team at your company complained about events not being sent or sent with the wrong information?_ Probably a few times before… One of the reason why these things happen is because we cannot test it with Acceptance Tests since it’s a “backend” functionality and because these network calls are triggered probably from user actions, views life cycles and it’s something we don’t usually test with unit tests. _There’s a clear need there, isn’t there?_
+
+> Inspired by a similar library that we use at SoundCloud for acceptance tests implemented in Frank I came up with a solution more flexible that can be used directly XCTest. Check it out at https://github.com/pepicrft/szimpla
+
+
+    

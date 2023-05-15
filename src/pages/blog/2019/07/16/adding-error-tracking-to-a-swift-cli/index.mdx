@@ -1,0 +1,78 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  "author": "Pedro Piñera",
+  "date": "2019-07-16",
+  "title": "Adding error tracking to a CLI written in Swift",
+  "description": "Trying to add error tracking to Tuist, I realized how the process is not very straightforward. This blog post describes the process that I followed to help other Swift developers add error tracking to their CLI tools."
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+
+Software is written by imperfect creatures,
+humans,
+and as a consequence the imperfection manifests in the software in the shape of bugs.
+Languages like Swift can help us write free-of-bugs software,
+but they'll never be able to help us get rid of them entirely.
+
+When bugs happen,
+it's crucial to be notified automatically with the right information that helps us debug and fix the bug quickly.
+That's why platforms like [Crashlytics](https://try.crashlytics.com/) or [Sentry](https://sentry.io) exist.
+They provide an SDK to add to your projects that collect handled and unhandled errors and report them to a web service.
+If you are an iOS developer,
+you are most likely familiar with them.
+
+[Tuist](https://tuist.io) didn't have error reporting,
+making it hard to know when errors happened and why.
+Moreover,
+we were relying on users to know about bugs.
+If they didn't create GitHub issues,
+we had no way to know that they were facing bugs while using the tool.
+
+I recently worked on adding error reporting to Tuist,
+which turned out not to be an straightforward task.
+This blog post is a summary of all the steps that I followed.
+Developers building command line tools using the [Swift Package Manager](https://swift.org/package-manager/) might find this blog post useful.
+
+## Download the dynamic framework
+
+The first thing that we need to do is pull the dynamic framework of your error tracking platform.
+Most services provide a dynamic framework,
+if not,
+you can ask them for it.
+[Here's](https://github.com/getsentry/sentry-cocoa/releases) for instance the list of Sentry releases,
+which contain the dynamic framework attached to it.
+
+> Setting up error tracking with a static framework it's also possible, but in this post I'll focus on the dynamic approach.
+
+Place the framework under `./Frameworks/` _(e.g. `./Frameworks/Sentry.framework`)_.
+
+## Generate an Xcode project that links against the framework
+
+Once we have the framework,
+we need to tell the Swift Package Manager to set up the generated Xcode project to use it.
+Although there isn't a public API that we can use from our project's `Package.swift` file,
+there's an undocumented API that we can leverage.
+Create a file, `MyTool.xcconfig`,
+where `MyTool` is the name of your tool,
+and add the following content:
+
+```
+LD_RUNPATH_SEARCH_PATHS = $(inherited) $(SRCROOT)/Frameworks
+FRAMEWORK_SEARCH_PATHS=$(inherited) $(SRCROOT)/Frameworks
+OTHER_LDFLAGS = $(inherited) -framework "Sentry"
+```
+
+- **LD_RUNPATH_SEARCH_PATHS**: Defines a list of directories where the dynamic linker can look up the linked frameworks. We are adding `$(SRCROOT)/Frameworks`, which is the `Frameworks` directory relative to the path where the generated Xcode project is.
+- **FRAMEWORK_SEARCH_PATHS**: Defines the directories that contain the frameworks to be linked during the compilation process.
+- **OTHER_LDFLAGS:** With this setting we include the linker flag `-framework Sentry` to link against the Sentry framework. You'll need to replace Sentry with the name of your framework.
+
+With the file `MyTool.xcconfig` in the project directory, we can run the following command:
+
+```
+swift package generate-xcodeproj --xcconfig-overrides MyTool.xcconfig
+```
+
+Notice the `
