@@ -46,7 +46,7 @@ export default function ArticlesIndex({ articles }) {
         title="Bring expertise on developer tooling, productivity, and platforms to your team"
         intro="To ensure your organization stays efficient and leverage the developer community to reach new markets"
       >
-          <div className="lg:order-first lg:row-span-2 prose">
+          <div className="lg:order-first lg:row-span-2 prose dark:text-zinc-400">
             <p>
               I’m open to new opportunities from Germany,{' '}
               <b>preferably as a contractor</b>, although I&apos;m open to
