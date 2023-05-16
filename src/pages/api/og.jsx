@@ -1,11 +1,10 @@
 import { ImageResponse } from '@vercel/og';
-import { NextRequest } from 'next/server';
 
 export const config = {
   runtime: 'edge',
 };
 
-export default function handler(request: NextRequest) {
+export default function handler(request) {
   try {
     const { searchParams } = new URL(request.url);
 
@@ -68,7 +67,7 @@ export default function handler(request: NextRequest) {
         height: 630,
       },
     );
-  } catch (e: any) {
+  } catch (e) {
     console.log(`${e.message}`);
     return new Response(`Failed to generate the image`, {
       status: 500,
