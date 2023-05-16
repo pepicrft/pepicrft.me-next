@@ -43,6 +43,7 @@ export default function ArticlesIndex({ articles }) {
           name="description"
           content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
         />
+        <meta property="og:image" content="https://pepicrft.me/api/og?title=Blog" />
       </Head>
       <SimpleLayout
         title="Writing on software, developer tools, and random thoughts."

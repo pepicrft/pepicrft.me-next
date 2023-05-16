@@ -61,6 +61,7 @@ export default function Projects() {
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
         />
+        <meta property="og:image" content="https://pepicrft.me/api/og?title=Projects" />
       </Head>
       <SimpleLayout
         title="Things I’ve made trying to put my dent in the universe."

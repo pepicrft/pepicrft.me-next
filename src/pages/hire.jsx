@@ -41,6 +41,7 @@ export default function ArticlesIndex({ articles }) {
           name="description"
           content="I'm looking for new opportunities to work on exciting projects."
         />
+         <meta property="og:image" content="https://pepicrft.me/api/og?title=Hire me" />
       </Head>
       <SimpleLayout
         title="Bring expertise on developer tooling, productivity, and platforms to your team"

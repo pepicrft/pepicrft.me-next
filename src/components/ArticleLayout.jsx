@@ -35,6 +35,7 @@ export function ArticleLayout({
       <Head>
         <title>{`${meta.title} - Pedro Piñera`}</title>
         <meta name="description" content={meta.description} />
+        <meta property="og:image" content={`https://pepicrft.me/api/og?title=${meta.title}`} />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
