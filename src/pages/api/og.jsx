@@ -23,23 +23,51 @@ export default function handler(request) {
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
-            flexDirection: 'column',
-            backgroundImage: 'linear-gradient(to bottom, #87f4b5, #93cbf1)',
-            fontSize: 60,
-            letterSpacing: -2,
+            letterSpacing: '-.02em',
             fontWeight: 700,
-            textAlign: 'center',
+            background: 'white',
           }}
         >
           <div
             style={{
-              backgroundImage: 'linear-gradient(90deg, #08203e, #524175)',
-              backgroundClip: 'text',
-              '-webkit-background-clip': 'text',
-              color: 'transparent',
+              left: 42,
+              top: 42,
+              color: '',
+              position: 'absolute',
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            {title}
+            <span
+              style={{
+                marginLeft: 8,
+                fontSize: 20,
+                backgroundImage: 'linear-gradient(90deg, #08203e, #524175)',
+                backgroundClip: 'text',
+                '-webkit-background-clip': 'text',
+                color: 'transparent',
+              }}
+            >
+              pepicrft.me
+            </span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              padding: '20px 50px',
+              margin: '0 42px',
+              fontSize: 40,
+              width: 'auto',
+              maxWidth: 550,
+              textAlign: 'center',
+              backgroundImage: 'linear-gradient(to right, #295270, #524175)',
+              color: 'white',
+              lineHeight: 1.4,
+            }}
+          >
+            {hasTitle}
           </div>
         </div>
       ),
